@@ -1,0 +1,5 @@
+order_id,customer_id,amount,status,region,updated_at
+3,103,412.50,completed,US,2024-01-02 08:00:00
+6,106,560.00,completed,EU,2024-01-02 09:00:00
+7,107,33.50,cancelled,US,2024-01-02 10:00:00
+8,108,780.00,pending,APAC,2024-01-02 11:30:00

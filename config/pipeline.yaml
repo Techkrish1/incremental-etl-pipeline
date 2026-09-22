@@ -1,0 +1,37 @@
+name: orders_pipeline
+source_dir: ./data/source
+warehouse_path: ./data/warehouse
+checkpoint_path: ./data/checkpoint.json
+target_table: orders
+merge_key: order_id
+updated_at_column: updated_at
+batch_size: 10000
+file_pattern: "*.csv"
+dead_letter_dir: ./data/dead_letter
+
+schema_fields:
+  - name: order_id
+    dtype: integer
+    nullable: false
+    primary_key: true
+  - name: customer_id
+    dtype: integer
+    nullable: false
+  - name: amount
+    dtype: float
+    nullable: true
+  - name: status
+    dtype: string
+    nullable: true
+  - name: region
+    dtype: string
+    nullable: true
+  - name: updated_at
+    dtype: timestamp
+    nullable: false
+
+quality:
+  max_null_rate: 0.05
+  require_unique_key: true
+  max_duplicate_rate: 0.0
+  freshness_sla_hours: 48
