@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.duckdb
+data/warehouse/
+data/dead_letter/
+data/checkpoint.json
+.pytest_cache/
+.coverage
+htmlcov/
